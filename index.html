@@ -3,71 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art by Sri Valli</title>
+    <title>srees_artwork</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    Art & Handmade Creations
+    <h1>srees_artwork</h1>
+    <p>Handmade Resin • Sketching • Surprise Gifts</p>
 </header>
 
-<nav>
-    <a href="#">Home</a>
-    <a href="#">Gallery</a>
-    <a href="#">Order</a>
-    <a href="#">Contact</a>
-</nav>
+<section class="about">
+    <p>Welcome to <strong>srees_artwork</strong>! Explore our unique handmade resin keychains, penchi sketches, vintage letters, and surprise gift boxes. Every product is crafted with care and love.</p>
+</section>
 
-<section>
-    <h2>Products</h2>
-    <div class="products">
+<section class="products">
+    <div class="product">
+        <img src="images/resin-keychain.jpeg" alt="Resin Keychain" onclick="openZoom(this)">
+        <p>Resin Keychain</p>
+        <p>₹80</p>
+        <a class="btn" href="https://wa.me/919492149119">Order on WhatsApp</a>
+        <a class="btn insta" href="https://instagram.com/srees_artwork">Order on Instagram</a>
+    </div>
 
-        <div class="product">
-            <img src="resin-keychain.jpeg" alt="Resin Keychain">
-            <p>Resin Keychain</p>
-            <p>₹80</p>
-            <a class="btn" href="https://wa.me/919492149119">Order</a>
-        </div>
+    <div class="product">
+        <img src="images/vintage-letters.jpeg" alt="Vintage Letters" onclick="openZoom(this)">
+        <p>Vintage Letters</p>
+        <p>₹250</p>
+        <a class="btn" href="https://wa.me/919492149119">Order on WhatsApp</a>
+        <a class="btn insta" href="https://instagram.com/srees_artwork">Order on Instagram</a>
+    </div>
 
-        <div class="product">
-            <img src="vintage-letters.jpeg" alt="Vintage Letters">
-            <p>Vintage Letters</p>
-            <p>₹250</p>
-            <a class="btn" href="https://wa.me/919492149119">Order</a>
-        </div>
+    <div class="product">
+        <img src="images/bangle.jpeg" alt="Bangles" onclick="openZoom(this)">
+        <p>Bangles</p>
+        <a class="btn" href="https://wa.me/919492149119">Order on WhatsApp</a>
+        <a class="btn insta" href="https://instagram.com/srees_artwork">Order on Instagram</a>
+    </div>
 
-        <div class="product">
-            <img src="bangle.jpeg" alt="Bangles">
-            <p>Bangles</p>
-            <a class="btn" href="https://wa.me/919492149119">Order</a>
-        </div>
+    <div class="product">
+        <img src="images/eye-sketch.jpeg" alt="Eye Sketches" onclick="openZoom(this)">
+        <p>Eye Sketches</p>
+        <p>₹200</p>
+        <a class="btn" href="https://wa.me/919492149119">Order on WhatsApp</a>
+        <a class="btn insta" href="https://instagram.com/srees_artwork">Order on Instagram</a>
+    </div>
 
-        <div class="product">
-            <img src="eye-sketch.jpeg" alt="Eye Sketches">
-            <p>Eye Sketches</p>
-            <p>₹200</p>
-            <a class="btn" href="https://wa.me/919492149119">Order</a>
-        </div>
+    <div class="product">
+        <img src="images/valentine-gift-box.jpeg" alt="Valentine Gift Box" onclick="openZoom(this)">
+        <p>Valentine Gift Box</p>
+        <a class="btn" href="https://wa.me/919492149119">Order on WhatsApp</a>
+        <a class="btn insta" href="https://instagram.com/srees_artwork">Order on Instagram</a>
+    </div>
 
-        <div class="product">
-            <img src="valentine-gift-box.jpeg" alt="Valentine Gift Box">
-            <p>Valentine Gift Box</p>
-            <a class="btn" href="https://wa.me/919492149119">Order</a>
-        </div>
-
-        <div class="product">
-            <img src="frame.jpeg" alt="Frames">
-            <p>Frames</p>
-            <a class="btn" href="https://wa.me/919492149119">Order</a>
-        </div>
-
+    <div class="product">
+        <img src="images/frame.jpeg" alt="Frames" onclick="openZoom(this)">
+        <p>Frames</p>
+        <a class="btn" href="https://wa.me/919492149119">Order on WhatsApp</a>
+        <a class="btn insta" href="https://instagram.com/srees_artwork">Order on Instagram</a>
     </div>
 </section>
 
 <footer>
-    Follow on Instagram: srees_artwork | WhatsApp Orders Available
+    <p>&copy; 2026 srees_artwork | Handmade with ❤️</p>
 </footer>
+
+<!-- Zoom Modal -->
+<div id="zoomModal" onclick="closeZoom()">
+    <img id="zoomedImg" src="">
+</div>
+
+<script>
+function openZoom(img) {
+    const modal = document.getElementById('zoomModal');
+    const zoomedImg = document.getElementById('zoomedImg');
+    zoomedImg.src = img.src;
+    modal.style.display = 'flex';
+}
+
+function closeZoom() {
+    const modal = document.getElementById('zoomModal');
+    modal.style.display = 'none';
+}
+</script>
 
 </body>
 </html>
+
