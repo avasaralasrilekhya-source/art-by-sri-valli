@@ -1,42 +1,35 @@
+/* style.css */
+
 body {
-    font-family: 'Poppins', 'Roboto', sans-serif;
+    background: #F7EEDB; /* pastel cream */
+    color: #3A2920; /* chocolate text */
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #F9F3E7; /* pastel cream */
-    color: #3A2920; /* dark chocolate text */
 }
 
-
 header {
-    background-color: #8B5C3B; /* chocolate */
-    color: white;
-    padding: 20px;
+    background: #C39A78; /* cocoa */
+    color: #FFFFFF;
     text-align: center;
-    letter-spacing: 1px;
+    padding: 20px;
+    font-size: 28px;
     font-weight: 600;
 }
 
-nav {
-    background: #9c4d9c;
+header p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+.about {
+    max-width: 900px;
+    margin: 20px auto;
     text-align: center;
-    padding: 12px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 12px;
-    font-weight: 500;
-}
-
-section {
-    padding: 30px;
-    text-align: center;
-}
-
-h2 {
-    font-size: 26px;
-    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #3A2920;
 }
 
 .products {
@@ -44,20 +37,23 @@ h2 {
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     gap: 20px;
     max-width: 1000px;
-    margin: auto;
+    margin: 20px auto;
+    padding: 0 10px;
 }
 
 .product {
     background: #FFFFFF;
-    border-radius: 12px;
-    padding: 15px;
-    border: 1px solid #C39A78; /* light cocoa border */
-    box-shadow: 0px 3px 10px rgba(139, 92, 59, 0.15); /* chocolate shadow */
-    transition: 0.3s ease;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0px 3px 10px rgba(60, 40, 30, 0.15);
+    border: 1px solid rgba(90, 60, 40, 0.2);
+    transition: 0.25s ease;
+    text-align: center;
 }
 
 .product:hover {
     transform: translateY(-4px);
+    box-shadow: 0px 5px 16px rgba(60, 40, 30, 0.25);
 }
 
 .product img {
@@ -65,32 +61,67 @@ h2 {
     height: 180px;
     object-fit: cover;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .product p {
     margin: 8px 0;
     font-size: 16px;
     font-weight: 500;
-    color: #3A2920; /* chocolate text */
 }
 
 .btn {
-    padding: 8px 12px;
-    background: #742774;
-    color: white;
-    border-radius: 6px;
     display: inline-block;
-    margin-top: 5px;
+    margin: 5px 5px 0 5px;
+    background: #8D6346; /* chocolate */
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
     text-decoration: none;
-    font-size: 14px;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    background: #704B32;
+}
+
+.btn.insta {
+    background: #C13584; /* Instagram pink */
+}
+
+.btn.insta:hover {
+    background: #8E2E5C;
 }
 
 footer {
-    background-color: #8B5C3B;
-    color: white;
-    padding: 15px;
     text-align: center;
-    font-size: 14px;
+    padding: 15px;
+    background: #C39A78;
+    color: #fff;
+    margin-top: 30px;
 }
+
+/* Zoom modal */
+#zoomModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+#zoomModal img {
+    max-width: 90%;
+    max-height: 90%;
+    transition: transform 0.3s ease;
+}
+
+
 
 
