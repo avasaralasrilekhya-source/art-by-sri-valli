@@ -1,7 +1,7 @@
 /* style.css */
 
 body {
-    background: #F7EEDB; /* pastel cream */
+    background: #FAF3E3; /* warm soft beige */
     color: #3A2920; /* chocolate text */
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    background: #C39A78; /* cocoa */
+    background: #8D6346; /* chocolate header */
     color: #FFFFFF;
     text-align: center;
     padding: 20px;
@@ -87,7 +87,7 @@ header p {
 }
 
 .btn.insta {
-    background: #C13584; /* Instagram pink */
+    background: #C13584; /* deep Instagram pink */
 }
 
 .btn.insta:hover {
@@ -97,7 +97,7 @@ header p {
 footer {
     text-align: center;
     padding: 15px;
-    background: #C39A78;
+    background: #8D6346;
     color: #fff;
     margin-top: 30px;
 }
@@ -121,6 +121,8 @@ footer {
     max-height: 90%;
     transition: transform 0.3s ease;
 }
+
+
 
 
 
