@@ -1,11 +1,12 @@
 /* style.css */
 
 body {
-    background: #FAF3E3; /* warm soft beige */
+    background: linear-gradient(135deg, #FAF3E3, #F5E8D0); /* soft warm gradient */
     color: #3A2920; /* chocolate text */
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    transition: background 0.5s ease;
 }
 
 header {
@@ -30,6 +31,8 @@ header p {
     font-size: 16px;
     line-height: 1.6;
     color: #3A2920;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
 }
 
 .products {
@@ -47,13 +50,15 @@ header p {
     padding: 16px;
     box-shadow: 0px 3px 10px rgba(60, 40, 30, 0.15);
     border: 1px solid rgba(90, 60, 40, 0.2);
-    transition: 0.25s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
 }
 
 .product:hover {
-    transform: translateY(-4px);
-    box-shadow: 0px 5px 16px rgba(60, 40, 30, 0.25);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(60, 40, 30, 0.25);
 }
 
 .product img {
@@ -62,6 +67,11 @@ header p {
     object-fit: cover;
     border-radius: 10px;
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.product img:hover {
+    transform: scale(1.05);
 }
 
 .product p {
@@ -79,19 +89,12 @@ header p {
     border-radius: 8px;
     text-decoration: none;
     font-weight: 500;
-    transition: 0.2s ease;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .btn:hover {
     background: #704B32;
-}
-
-.btn.insta {
-    background: #C13584; /* deep Instagram pink */
-}
-
-.btn.insta:hover {
-    background: #8E2E5C;
+    transform: scale(1.05);
 }
 
 footer {
@@ -111,9 +114,10 @@ footer {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.85);
     justify-content: center;
     align-items: center;
+    animation: fadeIn 0.3s forwards;
 }
 
 #zoomModal img {
@@ -121,6 +125,11 @@ footer {
     max-height: 90%;
     transition: transform 0.3s ease;
 }
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
 
 
 
