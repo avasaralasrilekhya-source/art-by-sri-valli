@@ -1,18 +1,19 @@
 body {
+    font-family: 'Poppins', 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background: #f7f3f7;
-    color: #333;
+    background-color: #F9F3E7; /* pastel cream */
+    color: #3A2920; /* dark chocolate text */
 }
 
+
 header {
-    background: #742774;
+    background-color: #8B5C3B; /* chocolate */
     color: white;
+    padding: 20px;
     text-align: center;
-    padding: 25px;
-    font-size: 28px;
-    font-weight: bold;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
 nav {
@@ -47,15 +48,16 @@ h2 {
 }
 
 .product {
-    background: white;
+    background: #FFFFFF;
     border-radius: 12px;
     padding: 15px;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.12);
+    border: 1px solid #C39A78; /* light cocoa border */
+    box-shadow: 0px 3px 10px rgba(139, 92, 59, 0.15); /* chocolate shadow */
     transition: 0.3s ease;
 }
 
 .product:hover {
-    transform: scale(1.05);
+    transform: translateY(-4px);
 }
 
 .product img {
@@ -69,6 +71,7 @@ h2 {
     margin: 8px 0;
     font-size: 16px;
     font-weight: 500;
+    color: #3A2920; /* chocolate text */
 }
 
 .btn {
@@ -83,11 +86,11 @@ h2 {
 }
 
 footer {
-    margin-top: 50px;
-    background: #742774;
+    background-color: #8B5C3B;
     color: white;
+    padding: 15px;
     text-align: center;
-    padding: 12px;
-    font-size: 15px;
+    font-size: 14px;
 }
+
 
