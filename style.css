@@ -2,7 +2,7 @@
 
 body {
     background: linear-gradient(135deg, #FAF3E3, #F5E8D0); /* soft warm gradient */
-    color: #3A2920; /* chocolate text */
+    color: #4B3621; /* updated chocolate color text */
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    background: #8D6346; /* chocolate header */
+    background: #5D3A1A; /* updated chocolate header */
     color: #FFFFFF;
     text-align: center;
     padding: 20px;
@@ -30,7 +30,7 @@ header p {
     text-align: center;
     font-size: 16px;
     line-height: 1.6;
-    color: #3A2920;
+    color: #4B3621;
     opacity: 0;
     animation: fadeIn 1s forwards;
 }
@@ -83,7 +83,7 @@ header p {
 .btn {
     display: inline-block;
     margin: 5px 5px 0 5px;
-    background: #8D6346; /* chocolate */
+    background: #5D3A1A; /* updated chocolate */
     color: white;
     padding: 8px 14px;
     border-radius: 8px;
@@ -93,14 +93,14 @@ header p {
 }
 
 .btn:hover {
-    background: #704B32;
+    background: #4B2F13; /* slightly darker */
     transform: scale(1.05);
 }
 
 footer {
     text-align: center;
     padding: 15px;
-    background: #8D6346;
+    background: #5D3A1A; /* updated chocolate */
     color: #fff;
     margin-top: 30px;
 }
