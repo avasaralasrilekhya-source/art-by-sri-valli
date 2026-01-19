@@ -18,8 +18,18 @@
     <p>Welcome to <strong>srees_artwork</strong>! Explore our unique handmade resin keychains, pencil sketches, vintage letters, and surprise gift boxes. Every product is crafted with care and love.</p>
 </section>
 
+<!-- FILTER BUTTONS -->
+<section class="filters">
+  <button onclick="filterProducts('all')">All</button>
+  <button onclick="filterProducts('resin')">Resin Keychains</button>
+  <button onclick="filterProducts('sketch')">Sketching</button>
+  <button onclick="filterProducts('gifts')">Surprise Gifts</button>
+  <button onclick="filterProducts('letters')">Vintage Letters</button>
+</section>
+
 <section class="products">
-    <div class="product">
+
+    <div class="product" data-category="resin">
         <img class="zoomable" src="./resin-keychain.jpeg" alt="Resin Keychain">
         <p>Resin Keychain</p>
         <p>₹80</p>
@@ -27,7 +37,7 @@
         <a class="btn" href="https://instagram.com/srees_artwork">Instagram</a>
     </div>
 
-    <div class="product">
+    <div class="product" data-category="letters">
         <img class="zoomable" src="./vintage-letters.jpeg" alt="Vintage Letters">
         <p>Vintage Letters</p>
         <p>₹250</p>
@@ -35,14 +45,14 @@
         <a class="btn" href="https://instagram.com/srees_artwork">Instagram</a>
     </div>
 
-    <div class="product">
+    <div class="product" data-category="gifts">
         <img class="zoomable" src="./bangle.jpeg" alt="Bangles">
         <p>Bangles</p>
         <a class="btn" href="https://wa.me/9492149119">Order WhatsApp</a>
         <a class="btn" href="https://instagram.com/srees_artwork">Instagram</a>
     </div>
 
-    <div class="product">
+    <div class="product" data-category="sketch">
         <img class="zoomable" src="./eye-sketch.jpeg" alt="Eye Sketches">
         <p>Eye Sketches</p>
         <p>₹200</p>
@@ -50,25 +60,26 @@
         <a class="btn" href="https://instagram.com/srees_artwork">Instagram</a>
     </div>
 
-    <div class="product">
+    <div class="product" data-category="gifts">
         <img class="zoomable" src="./valentine-gift-box.jpeg" alt="Valentine Gift Box">
         <p>Valentine Gift Box</p>
         <a class="btn" href="https://wa.me/9492149119">Order WhatsApp</a>
         <a class="btn" href="https://instagram.com/srees_artwork">Instagram</a>
     </div>
 
-    <div class="product">
+    <div class="product" data-category="gifts">
         <img class="zoomable" src="./frame.jpeg" alt="Frames">
         <p>Frames</p>
         <a class="btn" href="https://wa.me/9492149119">Order WhatsApp</a>
         <a class="btn" href="https://instagram.com/srees_artwork">Instagram</a>
     </div>
-    <div class="product">
-    <img class="zoomable" src="./bouqet.jpeg" alt="Handmade Bouqet">
-    <p>Handmade Bouquet</p>
-    <a class="btn" href="https://wa.me/9492149119">Order WhatsApp</a>
-    <a class="btn" href="https://instagram.com/srees_artwork">Instagram</a>
-</div>
+
+    <div class="product" data-category="gifts">
+        <img class="zoomable" src="./bouqet.jpeg" alt="Handmade Bouquet">
+        <p>Handmade Bouquet</p>
+        <a class="btn" href="https://wa.me/9492149119">Order WhatsApp</a>
+        <a class="btn" href="https://instagram.com/srees_artwork">Instagram</a>
+    </div>
 
 </section>
 
@@ -77,7 +88,19 @@
 </footer>
 
 <script>
-// Image Zoom
+// FILTER PRODUCTS
+function filterProducts(category) {
+  let products = document.querySelectorAll('.product');
+  products.forEach(p => {
+    if (category === 'all' || p.dataset.category === category) {
+      p.style.display = 'block';
+    } else {
+      p.style.display = 'none';
+    }
+  });
+}
+
+// IMAGE ZOOM
 const zoomables = document.querySelectorAll('.zoomable');
 zoomables.forEach(img => {
   img.addEventListener('click', () => {
@@ -102,7 +125,7 @@ zoomables.forEach(img => {
   });
 });
 
-// Confetti Effect
+// CONFETTI
 function createConfetti() {
   for(let i=0;i<50;i++){
     const confetti = document.createElement('div');
@@ -119,6 +142,8 @@ window.onload = createConfetti;
 
 </body>
 </html>
+
+
 
 
 
