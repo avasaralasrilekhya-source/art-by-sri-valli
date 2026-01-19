@@ -11,11 +11,11 @@
 
 <header>
     <h1>srees_artwork</h1>
-    <p>Handmade Resin • Sketching • Surprise Gifts</p>
+    <p>Handmade Resin • Sketching • Surprise Gifts • Bouquets</p>
 </header>
 
 <section class="about">
-    <p>Welcome to <strong>srees_artwork</strong>! Explore our unique handmade resin keychains, pencil sketches, vintage letters, bouquets, and surprise gift boxes. Every product is crafted with care and love.</p>
+    <p>Welcome to <strong>srees_artwork</strong>! Explore our unique handmade resin keychains, pencil sketches, vintage letters, bouquets, handmade roses, surprise gifts, and Valentine’s week specials. Every product is crafted with care and love.</p>
 </section>
 
 <!-- Category Buttons -->
@@ -24,7 +24,10 @@
     <button onclick="showCategory('vintage')">Vintage Letters</button>
     <button onclick="showCategory('bangles')">Bangles</button>
     <button onclick="showCategory('frames')">Frames</button>
-    <button onclick="showCategory('valentine gift box')">Valentine Gift Box</button>
+    <button onclick="showCategory('bouquets')">Bouquets</button>
+    <button onclick="showCategory('roses')">Handmade Roses</button>
+    <button onclick="showCategory('surprise')">Surprise Gifts</button>
+    <button onclick="showCategory('valentine')">Valentine's Specials</button>
 </section>
 
 <!-- Products container -->
@@ -62,12 +65,21 @@ const productsData = {
   bouquets: [
     { src: './bouquet1.jpeg', alt: 'Bouquet 1' },
     { src: './bouquet2.jpeg', alt: 'Bouquet 2' }
+  ],
+  roses: [
+    { src: './rose1.jpeg', alt: 'Handmade Rose 1' },
+    { src: './rose2.jpeg', alt: 'Handmade Rose 2' }
+  ],
+  surprise: [
+    { src: './surprise1.jpeg', alt: 'Surprise Gift 1' },
+    { src: './surprise2.jpeg', alt: 'Surprise Gift 2' }
+  ],
+  valentine: [
+    { src: './valentine1.jpeg', alt: 'Valentine Special 1' },
+    { src: './valentine2.jpeg', alt: 'Valentine Special 2' }
   ]
-   valentine gift box: [
-        {src: './valentine-box-gift1.jpeg',alt: 'Valentine Gift Box1'};
-        {src: './valentine-box-gift2.jpeg',alt: 'Valentine Gift Box2'}
-  ]    
 };
+
 // Show category function
 function showCategory(category) {
   const container = document.getElementById('products-container');
@@ -78,7 +90,6 @@ function showCategory(category) {
     div.className = 'product';
     div.innerHTML = `
       <img class="zoomable" src="${item.src}" alt="${item.alt}">
-      <p>${item.alt}</p>
       <a class="btn" href="https://wa.me/9492149119">Order WhatsApp</a>
       <a class="btn" href="https://instagram.com/srees_artwork">Instagram</a>
     `;
@@ -128,6 +139,7 @@ window.onload = createConfetti;
 
 </body>
 </html>
+
 
 
 
