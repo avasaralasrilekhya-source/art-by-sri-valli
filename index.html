@@ -69,81 +69,25 @@
     <p>&copy; 2026 srees_artwork | Handmade with ❤️</p>
 </footer>
 
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>srees_artwork</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<!-- Celebration Confetti -->
+<script>
+function createConfetti() {
+    for(let i=0; i<50; i++){
+        let confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.left = Math.random() * window.innerWidth + 'px';
+        confetti.style.animationDuration = (3 + Math.random() * 2) + 's';
+        document.body.appendChild(confetti);
+        setTimeout(()=> confetti.remove(), 5000);
+    }
+}
 
-<header>
-    <h1>srees_artwork</h1>
-    <p>Handmade Resin • Sketching • Surprise Gifts</p>
-</header>
-
-<section class="about">
-    <p>Welcome to <strong>srees_artwork</strong>! Explore our unique handmade resin keychains, penchi sketches, vintage letters, and surprise gift boxes. Every product is crafted with care and love.</p>
-</section>
-
-<section class="products">
-    <div class="product">
-        <img src="images/resin-keychain.jpeg" alt="Resin Keychain">
-        <p>Resin Keychain</p>
-        <p>₹80</p>
-        <a class="btn" href="https://wa.me/9492149119">Order WhatsApp</a>
-        <a class="btn" href="https://instagram.com/srees_artwork">Instagram</a>
-    </div>
-
-    <div class="product">
-        <img src="images/vintage-letters.jpeg" alt="Vintage Letters">
-        <p>Vintage Letters</p>
-        <p>₹250</p>
-        <a class="btn" href="https://wa.me/9492149119">Order WhatsApp</a>
-        <a class="btn" href="https://instagram.com/srees_artwork">Instagram</a>
-    </div>
-
-    <div class="product">
-        <img src="images/bangle.jpeg" alt="Bangles">
-        <p>Bangles</p>
-        <a class="btn" href="https://wa.me/9492149119">Order WhatsApp</a>
-        <a class="btn" href="https://instagram.com/srees_artwork">Instagram</a>
-    </div>
-
-    <div class="product">
-        <img src="images/eye-sketch.jpeg" alt="Eye Sketches">
-        <p>Eye Sketches</p>
-        <p>₹200</p>
-        <a class="btn" href="https://wa.me/9492149119">Order WhatsApp</a>
-        <a class="btn" href="https://instagram.com/srees_artwork">Instagram</a>
-    </div>
-
-    <div class="product">
-        <img src="images/valentine-gift-box.jpeg" alt="Valentine Gift Box">
-        <p>Valentine Gift Box</p>
-        <a class="btn" href="https://wa.me/9492149119">Order WhatsApp</a>
-        <a class="btn" href="https://instagram.com/srees_artwork">Instagram</a>
-    </div>
-
-    <div class="product">
-        <img src="images/frame.jpeg" alt="Frames">
-        <p>Frames</p>
-        <a class="btn" href="https://wa.me/9492149119">Order WhatsApp</a>
-        <a class="btn" href="https://instagram.com/srees_artwork">Instagram</a>
-    </div>
-</section>
-
-<footer>
-    <p>&copy; 2026 srees_artwork | Handmade with ❤️</p>
-</footer>
+window.onload = createConfetti;
+</script>
 
 </body>
 </html>
+
 
 
 
