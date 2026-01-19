@@ -18,9 +18,13 @@
     <p>Welcome to <strong>srees_artwork</strong>! Explore our unique handmade resin keychains, pencil sketches, vintage letters, bouquets, and surprise gift boxes. Every product is crafted with care and love.</p>
 </section>
 
-<!-- Category Buttons with Icons -->
-<section class="categories" id="categories-container">
-    <!-- Buttons will be dynamically added -->
+<!-- Category Buttons -->
+<section class="categories">
+    <button onclick="showCategory('resin')">Resin Keychains</button>
+    <button onclick="showCategory('vintage')">Vintage Letters</button>
+    <button onclick="showCategory('bangles')">Bangles</button>
+    <button onclick="showCategory('frames')">Frames</button>
+    <button onclick="showCategory('bouquets')">Bouquets</button>
 </section>
 
 <!-- Products container -->
@@ -33,61 +37,52 @@
 </footer>
 
 <script>
-// Categories and folder mapping
-const categories = [
-  { name: 'Resin Keychains', key: 'resin', folder: './resin/' },
-  { name: 'Vintage Letters', key: 'vintage', folder: './vintage/' },
-  { name: 'Bangles', key: 'bangles', folder: './bangles/' },
-  { name: 'Frames', key: 'frames', folder: './frames/' },
-  { name: 'Bouquets', key: 'bouquets', folder: './bouquets/' }
-];
+// Products Data
+const productsData = {
+  resin: [
+    { src: './resin1.jpeg', alt: 'Resin Keychain 1' },
+    { src: './resin2.jpeg', alt: 'Resin Keychain 2' },
+    { src: './resin3.jpeg', alt: 'Resin Keychain 3' },
+    { src: './resin4.jpeg', alt: 'Resin Keychain 4' },
+    { src: './resin5.jpeg', alt: 'Resin Keychain 5' },
+    { src: './resin6.jpeg', alt: 'Resin Keychain 6' }
+  ],
+  vintage: [
+    { src: './vintage1.jpeg', alt: 'Vintage Letter 1' },
+    { src: './vintage2.jpeg', alt: 'Vintage Letter 2' }
+  ],
+  bangles: [
+    { src: './bangle1.jpeg', alt: 'Bangle 1' },
+    { src: './bangle2.jpeg', alt: 'Bangle 2' }
+  ],
+  frames: [
+    { src: './frame1.jpeg', alt: 'Frame 1' },
+    { src: './frame2.jpeg', alt: 'Frame 2' }
+  ],
+  bouquets: [
+    { src: './bouquet1.jpeg', alt: 'Bouquet 1' },
+    { src: './bouquet2.jpeg', alt: 'Bouquet 2' }
+  ]
+};
 
-// Dynamically create buttons for categories
-const categoriesContainer = document.getElementById('categories-container');
-categories.forEach(cat => {
-  const btn = document.createElement('button');
-  btn.textContent = cat.name;
-  btn.onclick = () => showCategory(cat.key, cat.folder);
-  categoriesContainer.appendChild(btn);
-});
-
-// Dynamically load images from folder (assume images named 1.jpeg, 2.jpeg, ...)
-function showCategory(key, folder) {
+// Show category function
+function showCategory(category) {
   const container = document.getElementById('products-container');
-  container.innerHTML = '';
+  container.innerHTML = ''; // clear previous
 
-  // Dynamically assume 10 images max (you can adjust)
-  for(let i=1; i<=10; i++){
-    const imgPath = `${folder}${i}.jpeg`;
-    const img = new Image();
-    img.src = imgPath;
-    img.alt = `${key} ${i}`;
-    img.className = 'zoomable';
-    
-    img.onerror = () => img.remove(); // remove if image not exist
-    
+  productsData[category].forEach(item => {
     const div = document.createElement('div');
     div.className = 'product';
-    div.appendChild(img);
-    
-    // Buttons
-    const orderBtn = document.createElement('a');
-    orderBtn.className = 'btn';
-    orderBtn.href = 'https://wa.me/9492149119';
-    orderBtn.textContent = 'Order WhatsApp';
-    
-    const instaBtn = document.createElement('a');
-    instaBtn.className = 'btn';
-    instaBtn.href = 'https://instagram.com/srees_artwork';
-    instaBtn.textContent = 'Instagram';
-    
-    div.appendChild(orderBtn);
-    div.appendChild(instaBtn);
-    
+    div.innerHTML = `
+      <img class="zoomable" src="${item.src}" alt="${item.alt}">
+      <p>${item.alt}</p>
+      <a class="btn" href="https://wa.me/9492149119">Order WhatsApp</a>
+      <a class="btn" href="https://instagram.com/srees_artwork">Instagram</a>
+    `;
     container.appendChild(div);
-  }
+  });
 
-  // Zoom functionality
+  // Zoom effect
   const zoomables = document.querySelectorAll('.zoomable');
   zoomables.forEach(img => {
     img.addEventListener('click', () => {
@@ -130,6 +125,8 @@ window.onload = createConfetti;
 
 </body>
 </html>
+
+
 
 
 
