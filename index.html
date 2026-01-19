@@ -20,7 +20,7 @@
 
 <section class="products">
 <div class="product">
-<img class="zoomable" src="./images/resin-keychain.jpeg" alt="Resin Keychain">
+<img class="zoomable" src="https://raw.githubusercontent.com/avasaralasrilekhya-source/art-by-sri-valli/main/images/resin-keychain.jpeg" alt="Resin Keychain">
 <p>Resin Keychain</p>
 <p>₹80</p>
 <a class="btn" href="https://wa.me/9492149119">Order WhatsApp</a>
@@ -28,7 +28,7 @@
 </div>
 
 <div class="product">
-<img class="zoomable" src="./images/vintage-letters.jpeg" alt="Vintage Letters">
+<img class="zoomable" src="https://raw.githubusercontent.com/avasaralasrilekhya-source/art-by-sri-valli/main/images/vintage-letters.jpeg" alt="Vintage Letters">
 <p>Vintage Letters</p>
 <p>₹250</p>
 <a class="btn" href="https://wa.me/9492149119">Order WhatsApp</a>
@@ -36,14 +36,14 @@
 </div>
 
 <div class="product">
-<img class="zoomable" src="./images/bangle.jpeg" alt="Bangles">
+<img class="zoomable" src="https://raw.githubusercontent.com/avasaralasrilekhya-source/art-by-sri-valli/main/images/bangle.jpeg" alt="Bangles">
 <p>Bangles</p>
 <a class="btn" href="https://wa.me/9492149119">Order WhatsApp</a>
 <a class="btn" href="https://instagram.com/srees_artwork">Instagram</a>
 </div>
 
 <div class="product">
-<img class="zoomable" src="./images/eye-sketch.jpeg" alt="Eye Sketches">
+<img class="zoomable" src="https://raw.githubusercontent.com/avasaralasrilekhya-source/art-by-sri-valli/main/images/eye-sketch.jpeg" alt="Eye Sketches">
 <p>Eye Sketches</p>
 <p>₹200</p>
 <a class="btn" href="https://wa.me/9492149119">Order WhatsApp</a>
@@ -51,14 +51,14 @@
 </div>
 
 <div class="product">
-<img class="zoomable" src="./images/valentine-gift-box.jpeg" alt="Valentine Gift Box">
+<img class="zoomable" src="https://raw.githubusercontent.com/avasaralasrilekhya-source/art-by-sri-valli/main/images/valentine-gift-box.jpeg" alt="Valentine Gift Box">
 <p>Valentine Gift Box</p>
 <a class="btn" href="https://wa.me/9492149119">Order WhatsApp</a>
 <a class="btn" href="https://instagram.com/srees_artwork">Instagram</a>
 </div>
 
 <div class="product">
-<img class="zoomable" src="./images/frame.jpeg" alt="Frames">
+<img class="zoomable" src="https://raw.githubusercontent.com/avasaralasrilekhya-source/art-by-sri-valli/main/images/frame.jpeg" alt="Frames">
 <p>Frames</p>
 <a class="btn" href="https://wa.me/9492149119">Order WhatsApp</a>
 <a class="btn" href="https://instagram.com/srees_artwork">Instagram</a>
@@ -70,48 +70,50 @@
 </footer>
 
 <script>
-// Image Zoom Functionality
+// Image Zoom
 const zoomables = document.querySelectorAll('.zoomable');
 zoomables.forEach(img => {
- img.addEventListener('click', ()=>{
- const overlay = document.createElement('div');
- overlay.style.position = 'fixed';
- overlay.style.top = '0';
- overlay.style.left = '0';
- overlay.style.width = '100%';
- overlay.style.height = '100%';
- overlay.style.background = 'rgba(0,0,0,0.8)';
- overlay.style.display = 'flex';
- overlay.style.alignItems = 'center';
- overlay.style.justifyContent = 'center';
- overlay.style.zIndex = '10000';
- const clone = img.cloneNode();
- clone.style.maxWidth = '90%';
- clone.style.maxHeight = '90%';
- clone.style.borderRadius = '12px';
- overlay.appendChild(clone);
- overlay.addEventListener('click', ()=> overlay.remove());
- document.body.appendChild(overlay);
- });
+  img.addEventListener('click', () => {
+    const overlay = document.createElement('div');
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.background = 'rgba(0,0,0,0.8)';
+    overlay.style.display = 'flex';
+    overlay.style.alignItems = 'center';
+    overlay.style.justifyContent = 'center';
+    overlay.style.zIndex = '10000';
+    const clone = img.cloneNode();
+    clone.style.maxWidth = '90%';
+    clone.style.maxHeight = '90%';
+    clone.style.borderRadius = '12px';
+    overlay.appendChild(clone);
+    overlay.addEventListener('click', () => overlay.remove());
+    document.body.appendChild(overlay);
+  });
 });
 
-// Simple Confetti Animation on Load
-function createConfetti(){
- for(let i=0;i<50;i++){
- const confetti = document.createElement('div');
- confetti.classList.add('confetti');
- confetti.style.left = Math.random()*window.innerWidth+'px';
- confetti.style.backgroundColor=['#FFC0CB','#FFD1DC','#FFB6C1'][Math.floor(Math.random()*3)];
- confetti.style.animationDuration=(3+Math.random()*2)+'s';
- document.body.appendChild(confetti);
- setTimeout(()=>confetti.remove(),5000);
- }
+// Confetti
+function createConfetti() {
+  for(let i=0;i<50;i++){
+    const confetti = document.createElement('div');
+    confetti.classList.add('confetti');
+    confetti.style.left = Math.random()*window.innerWidth+'px';
+    confetti.style.backgroundColor = ['#FFC0CB','#FFD1DC','#FFB6C1'][Math.floor(Math.random()*3)];
+    confetti.style.animationDuration = (3+Math.random()*2)+'s';
+    document.body.appendChild(confetti);
+    setTimeout(() => confetti.remove(),5000);
+  }
 }
-window.onload=createConfetti;
+window.onload = createConfetti;
 </script>
 
 </body>
 </html>
+
+
 
 
 
