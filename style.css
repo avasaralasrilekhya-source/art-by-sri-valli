@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #fff8f0, #ffe4e1);
+    background: linear-gradient(135deg, #fffaf0, #ffe4e1);
     color: #333;
     overflow-x: hidden;
 }
@@ -11,7 +11,7 @@ body {
 header {
     text-align: center;
     padding: 30px 10px;
-    background: rgba(255, 192, 203, 0.2); /* soft pink highlight */
+    background: rgba(255, 192, 203, 0.2);
 }
 
 header h1 {
@@ -110,6 +110,8 @@ footer {
     0% { transform: translateY(0) rotate(0deg); opacity: 1; }
     100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
 }
+
+
 
 
 
