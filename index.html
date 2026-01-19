@@ -18,58 +18,14 @@
     <p>Welcome to <strong>srees_artwork</strong>! Explore our unique handmade resin keychains, pencil sketches, vintage letters, bouquets, and surprise gift boxes. Every product is crafted with care and love.</p>
 </section>
 
-<section class="products">
+<!-- Category Buttons with Icons -->
+<section class="categories" id="categories-container">
+    <!-- Buttons will be dynamically added -->
+</section>
 
-    <!-- Resin Keychains -->
-    <div class="product">
-        <img class="zoomable" src="./resin/resin1.jpeg" alt="Resin Keychain">
-    </div>
-    <div class="product">
-        <img class="zoomable" src="./resin/resin2.jpeg" alt="Resin Keychain">
-    </div>
-    <div class="product">
-        <img class="zoomable" src="./resin/resin3.jpeg" alt="Resin Keychain">
-    </div>
-    <div class="product">
-        <img class="zoomable" src="./resin/resin4.jpeg" alt="Resin Keychain">
-    </div>
-    <div class="product">
-        <img class="zoomable" src="./resin/resin5.jpeg" alt="Resin Keychain">
-    </div>
-    <div class="product">
-        <img class="zoomable" src="./resin/resin6.jpeg" alt="Resin Keychain">
-    </div>
-
-    <!-- Vintage Letters -->
-    <div class="product">
-        <img class="zoomable" src="./vintage-letters.jpeg" alt="Vintage Letters">
-    </div>
-
-    <!-- Bangles -->
-    <div class="product">
-        <img class="zoomable" src="./bangle.jpeg" alt="Bangles">
-    </div>
-
-    <!-- Eye Sketches -->
-    <div class="product">
-        <img class="zoomable" src="./eye-sketch.jpeg" alt="Eye Sketches">
-    </div>
-
-    <!-- Valentine Gift Box -->
-    <div class="product">
-        <img class="zoomable" src="./valentine-gift-box.jpeg" alt="Valentine Gift Box">
-    </div>
-
-    <!-- Frames -->
-    <div class="product">
-        <img class="zoomable" src="./frame.jpeg" alt="Frames">
-    </div>
-
-    <!-- Handmade Bouquets -->
-    <div class="product">
-        <img class="zoomable" src="./bouquet.jpeg" alt="Handmade Bouquet">
-    </div>
-
+<!-- Products container -->
+<section class="products" id="products-container">
+  <!-- Images will appear here dynamically -->
 </section>
 
 <footer>
@@ -77,32 +33,87 @@
 </footer>
 
 <script>
-// Image Zoom
-const zoomables = document.querySelectorAll('.zoomable');
-zoomables.forEach(img => {
-  img.addEventListener('click', () => {
-    const overlay = document.createElement('div');
-    overlay.style.position = 'fixed';
-    overlay.style.top = '0';
-    overlay.style.left = '0';
-    overlay.style.width = '100%';
-    overlay.style.height = '100%';
-    overlay.style.background = 'rgba(0,0,0,0.8)';
-    overlay.style.display = 'flex';
-    overlay.style.alignItems = 'center';
-    overlay.style.justifyContent = 'center';
-    overlay.style.zIndex = '10000';
-    const clone = img.cloneNode();
-    clone.style.maxWidth = '90%';
-    clone.style.maxHeight = '90%';
-    clone.style.borderRadius = '12px';
-    overlay.appendChild(clone);
-    overlay.addEventListener('click', () => overlay.remove());
-    document.body.appendChild(overlay);
-  });
+// Categories and folder mapping
+const categories = [
+  { name: 'Resin Keychains', key: 'resin', folder: './resin/' },
+  { name: 'Vintage Letters', key: 'vintage', folder: './vintage/' },
+  { name: 'Bangles', key: 'bangles', folder: './bangles/' },
+  { name: 'Frames', key: 'frames', folder: './frames/' },
+  { name: 'Bouquets', key: 'bouquets', folder: './bouquets/' }
+];
+
+// Dynamically create buttons for categories
+const categoriesContainer = document.getElementById('categories-container');
+categories.forEach(cat => {
+  const btn = document.createElement('button');
+  btn.textContent = cat.name;
+  btn.onclick = () => showCategory(cat.key, cat.folder);
+  categoriesContainer.appendChild(btn);
 });
 
-// Confetti Effect
+// Dynamically load images from folder (assume images named 1.jpeg, 2.jpeg, ...)
+function showCategory(key, folder) {
+  const container = document.getElementById('products-container');
+  container.innerHTML = '';
+
+  // Dynamically assume 10 images max (you can adjust)
+  for(let i=1; i<=10; i++){
+    const imgPath = `${folder}${i}.jpeg`;
+    const img = new Image();
+    img.src = imgPath;
+    img.alt = `${key} ${i}`;
+    img.className = 'zoomable';
+    
+    img.onerror = () => img.remove(); // remove if image not exist
+    
+    const div = document.createElement('div');
+    div.className = 'product';
+    div.appendChild(img);
+    
+    // Buttons
+    const orderBtn = document.createElement('a');
+    orderBtn.className = 'btn';
+    orderBtn.href = 'https://wa.me/9492149119';
+    orderBtn.textContent = 'Order WhatsApp';
+    
+    const instaBtn = document.createElement('a');
+    instaBtn.className = 'btn';
+    instaBtn.href = 'https://instagram.com/srees_artwork';
+    instaBtn.textContent = 'Instagram';
+    
+    div.appendChild(orderBtn);
+    div.appendChild(instaBtn);
+    
+    container.appendChild(div);
+  }
+
+  // Zoom functionality
+  const zoomables = document.querySelectorAll('.zoomable');
+  zoomables.forEach(img => {
+    img.addEventListener('click', () => {
+      const overlay = document.createElement('div');
+      overlay.style.position = 'fixed';
+      overlay.style.top = '0';
+      overlay.style.left = '0';
+      overlay.style.width = '100%';
+      overlay.style.height = '100%';
+      overlay.style.background = 'rgba(0,0,0,0.8)';
+      overlay.style.display = 'flex';
+      overlay.style.alignItems = 'center';
+      overlay.style.justifyContent = 'center';
+      overlay.style.zIndex = '10000';
+      const clone = img.cloneNode();
+      clone.style.maxWidth = '90%';
+      clone.style.maxHeight = '90%';
+      clone.style.borderRadius = '12px';
+      overlay.appendChild(clone);
+      overlay.addEventListener('click', () => overlay.remove());
+      document.body.appendChild(overlay);
+    });
+  });
+}
+
+// Confetti effect
 function createConfetti() {
   for(let i=0;i<50;i++){
     const confetti = document.createElement('div');
@@ -119,6 +130,8 @@ window.onload = createConfetti;
 
 </body>
 </html>
+
+
 
 
 
