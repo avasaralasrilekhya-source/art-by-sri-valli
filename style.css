@@ -1,37 +1,40 @@
-/* style.css */
-
+/* General */
 body {
-    background: linear-gradient(135deg, #F8F4EC 0%, #FFF1F0 100%);
-    color: #3E2F2F;
-    font-family: 'Poppins', sans-serif;
     margin: 0;
-    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fff8f0, #ffe4e1);
+    color: #333;
     overflow-x: hidden;
 }
 
+/* Header */
 header {
     text-align: center;
-    padding: 30px 20px;
-    background: rgba(255, 192, 203, 0.2);
+    padding: 30px 10px;
+    background: rgba(255, 192, 203, 0.2); /* soft pink highlight */
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: 2.5rem;
+    color: #d63384;
 }
 
 header p {
-    margin: 5px 0 0 0;
-    font-weight: 400;
+    font-size: 1rem;
+    color: #555;
 }
 
+/* About Section */
 .about {
-    text-align: center;
     max-width: 800px;
     margin: 20px auto;
-    font-size: 1.1em;
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 10px 20px;
 }
 
+/* Products Grid */
 .products {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -40,13 +43,13 @@ header p {
     margin: 40px auto;
 }
 
+/* Product Card */
 .product {
-    background: #ffffff;
+    background: #fff;
     border-radius: 12px;
     padding: 15px;
     box-shadow: 0px 4px 12px rgba(0,0,0,0.12);
-    transition: 0.3s ease, transform 0.3s ease;
-    position: relative;
+    transition: 0.3s ease;
 }
 
 .product:hover {
@@ -58,12 +61,7 @@ header p {
     height: 180px;
     object-fit: cover;
     border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.product img:hover {
-    transform: scale(1.1);
+    cursor: zoom-in;
 }
 
 .product p {
@@ -72,45 +70,47 @@ header p {
     font-weight: 500;
 }
 
+/* Buttons */
 .btn {
     display: inline-block;
     margin: 5px 5px 0 0;
-    padding: 8px 16px;
-    background-color: #FFC0CB;
-    color: #3E2F2F;
+    padding: 8px 15px;
+    background-color: #ffb6c1;
+    color: #fff;
     text-decoration: none;
     border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #FFB6B6;
-    transform: scale(1.05);
+    background-color: #ff85a2;
 }
 
+/* Footer */
 footer {
     text-align: center;
-    padding: 20px;
-    font-size: 0.9em;
+    padding: 15px 10px;
     background: rgba(255, 192, 203, 0.2);
+    margin-top: 40px;
 }
 
-/* Celebration animation */
-@keyframes floatConfetti {
-    0% {transform: translateY(0) rotate(0deg); opacity:1;}
-    100% {transform: translateY(100vh) rotate(360deg); opacity:0;}
-}
-
+/* Confetti */
 .confetti {
     position: fixed;
-    width: 10px;
-    height: 10px;
-    background-color: #FFC0CB;
-    top: -10px;
-    animation: floatConfetti 5s linear infinite;
-    z-index: 9999;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
+    top: 0;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
 }
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
 
 
 
