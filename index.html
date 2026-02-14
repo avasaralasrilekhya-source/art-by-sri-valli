@@ -28,6 +28,7 @@
     <button onclick="showCategory('roses')">Handmade Roses</button>
     <button onclick="showCategory('surprise')">Surprise Gifts</button>
     <button onclick="showCategory('valentine')">Valentine's Specials</button>
+    <button onclick="showCategory('resins')">Resin Frames</button>
 </section>
 
 <!-- Products container -->
@@ -78,8 +79,12 @@ const productsData = {
     { src: './valentine1.jpeg', alt: 'Valentine Special 1' },
     { src: './valentine2.jpeg', alt: 'Valentine Special 2' }
   ]
-};
 
+     resins: [
+    { src: './resin frame1.jpeg', alt: 'Resin Frame 1' },
+    { src: './resin frame2.jpeg', alt: 'Resin Frame 2' }
+  ],
+};
 // Show category function
 function showCategory(category) {
   const container = document.getElementById('products-container');
@@ -139,6 +144,7 @@ window.onload = createConfetti;
 
 </body>
 </html>
+
 
 
 
