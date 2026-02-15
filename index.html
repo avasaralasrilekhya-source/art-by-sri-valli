@@ -28,7 +28,10 @@
     <button onclick="showCategory('roses')">Handmade Roses</button>
     <button onclick="showCategory('surprise')">Surprise Gifts</button>
     <button onclick="showCategory('valentine')">Valentine's Specials</button>
-    <button onclick="showCategory('resins')">Resin Frames</button>
+    <button onclick="showCategory('resinFrames')">Resin Frames</button>
+    <button onclick="showCategory('canvas')">Canvas Paintings</button>
+    <button onclick="showCategory('crochet')">Crochet Flowers</button>
+
 </section>
 
 <!-- Products container -->
@@ -78,12 +81,22 @@ const productsData = {
   valentine: [
     { src: './valentine1.jpeg', alt: 'Valentine Special 1' },
     { src: './valentine2.jpeg', alt: 'Valentine Special 2' }
-  ]
-
-     resins: [
-    { src: './resin frame1.jpeg', alt: 'Resin Frame 1' },
-    { src: './resin frame2.jpeg', alt: 'Resin Frame 2' }
   ],
+    resinFrames: [
+  { src: './resinframe1.jpeg', alt: 'Resin Frame 1' },
+  { src: './resinframe2.jpeg', alt: 'Resin Frame 2' }
+],
+
+canvas: [
+  { src: './canvas1.jpeg', alt: 'Canvas Painting 1' },
+  { src: './canvas2.jpeg', alt: 'Canvas Painting 2' }
+],
+
+crochet: [
+  { src: './crochet1.jpeg', alt: 'Crochet Flower 1' },
+  { src: './crochet2.jpeg', alt: 'Crochet Flower 2' }
+],
+
 };
 // Show category function
 function showCategory(category) {
@@ -144,6 +157,7 @@ window.onload = createConfetti;
 
 </body>
 </html>
+
 
 
 
