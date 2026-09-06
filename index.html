@@ -32,6 +32,12 @@
     <button onclick="showCategory('canvas')">Canvas Paintings</button>
     <button onclick="showCategory('crochet')">Crochet Flowers</button>
     <button onclick="showCategory('chains')">Resin Lockets</button>
+
+    <!-- NEW CATEGORIES -->
+    <button onclick="showCategory('rakhis')">Rakhis</button>
+    <button onclick="showCategory('miniLetters')">Mini Letters</button>
+    <button onclick="showCategory('varamala')">Varamala Preservation</button>
+    <button onclick="showCategory('clocks')">Clocks</button>
 </section>
 
 <!-- Products container -->
@@ -44,8 +50,10 @@
 </footer>
 
 <script>
+
 // Products Data
 const productsData = {
+
   resin: [
     { src: './resin1.jpeg', alt: 'Resin Keychain 1' },
     { src: './resin2.jpeg', alt: 'Resin Keychain 2' },
@@ -54,79 +62,123 @@ const productsData = {
     { src: './resin5.jpeg', alt: 'Resin Keychain 5' },
     { src: './resin6.jpeg', alt: 'Resin Keychain 6' }
   ],
+
   vintage: [
     { src: './vintage1.jpeg', alt: 'Vintage Letter 1' },
     { src: './vintage2.jpeg', alt: 'Vintage Letter 2' }
   ],
+
   bangles: [
     { src: './bangle1.jpeg', alt: 'Bangle 1' },
     { src: './bangle2.jpeg', alt: 'Bangle 2' }
   ],
+
   frames: [
     { src: './frame1.jpeg', alt: 'Frame 1' },
     { src: './frame2.jpeg', alt: 'Frame 2' }
   ],
+
   bouquets: [
     { src: './bouquet1.jpeg', alt: 'Bouquet 1' },
     { src: './bouquet2.jpeg', alt: 'Bouquet 2' }
   ],
+
   roses: [
     { src: './rose1.jpeg', alt: 'Handmade Rose 1' },
     { src: './rose2.jpeg', alt: 'Handmade Rose 2' }
   ],
+
   surprise: [
     { src: './surprise1.jpeg', alt: 'Surprise Gift 1' },
     { src: './surprise2.jpeg', alt: 'Surprise Gift 2' }
   ],
+
   valentine: [
     { src: './valentine1.jpeg', alt: 'Valentine Special 1' },
     { src: './valentine2.jpeg', alt: 'Valentine Special 2' }
   ],
-    resinFrames: [
-  { src: './resinframe1.jpeg', alt: 'Resin Frame 1' },
-  { src: './resinframe2.jpeg', alt: 'Resin Frame 2' }
-],
 
-canvas: [
-  { src: './canvas1.jpeg', alt: 'Canvas Painting 1' },
-  { src: './canvas2.jpeg', alt: 'Canvas Painting 2' },
+  resinFrames: [
+    { src: './resinframe1.jpeg', alt: 'Resin Frame 1' },
+    { src: './resinframe2.jpeg', alt: 'Resin Frame 2' }
+  ],
+
+  canvas: [
+    { src: './canvas1.jpeg', alt: 'Canvas Painting 1' },
+    { src: './canvas2.jpeg', alt: 'Canvas Painting 2' },
     { src: './canvas3.jpeg', alt: 'Canvas Painting 3' },
     { src: './canvas4.jpeg', alt: 'Canvas Painting 4' }
-],
+  ],
 
-crochet: [
-  { src: './crochet1.jpeg', alt: 'Crochet Flower 1' },
-  { src: './crochet2.jpeg', alt: 'Crochet Flower 2' }
-],
-    chains: [
-  { src: './chains1.jpeg', alt: 'Resin Lockets 1' },
-  { src: './chains2.jpeg', alt: 'Resin Lockets 2' },
-  { src: './chains3.jpeg', alt: 'Resin Lockets 3' }
-    
-],
+  crochet: [
+    { src: './crochet1.jpeg', alt: 'Crochet Flower 1' },
+    { src: './crochet2.jpeg', alt: 'Crochet Flower 2' }
+  ],
+
+  chains: [
+    { src: './chains1.jpeg', alt: 'Resin Lockets 1' },
+    { src: './chains2.jpeg', alt: 'Resin Lockets 2' },
+    { src: './chains3.jpeg', alt: 'Resin Lockets 3' }
+  ],
+
+  // NEW PRODUCTS
+
+  rakhis: [
+    { src: './rakhi1.jpeg', alt: 'Rakhi 1' },
+    { src: './rakhi2.jpeg', alt: 'Rakhi 2' }
+  ],
+
+  miniLetters: [
+    { src: './miniletter1.jpeg', alt: 'Mini Letter 1' },
+    { src: './miniletter2.jpeg', alt: 'Mini Letter 2' }
+  ],
+
+  varamala: [
+    { src: './varamala1.jpeg', alt: 'Varamala Preservation 1' },
+    { src: './varamala2.jpeg', alt: 'Varamala Preservation 2' }
+  ],
+
+  clocks: [
+    { src: './clock1.jpeg', alt: 'Customized Clock 1' },
+    { src: './clock2.jpeg', alt: 'Customized Clock 2' }
+  ]
 
 };
+
+
 // Show category function
 function showCategory(category) {
+
   const container = document.getElementById('products-container');
+
   container.innerHTML = ''; // clear previous
 
   productsData[category].forEach(item => {
+
     const div = document.createElement('div');
+
     div.className = 'product';
+
     div.innerHTML = `
       <img class="zoomable" src="${item.src}" alt="${item.alt}">
       <a class="btn" href="https://wa.me/9492149119">Order WhatsApp</a>
       <a class="btn" href="https://instagram.com/srees_artwork">Instagram</a>
     `;
+
     container.appendChild(div);
+
   });
+
 
   // Zoom effect
   const zoomables = document.querySelectorAll('.zoomable');
+
   zoomables.forEach(img => {
+
     img.addEventListener('click', () => {
+
       const overlay = document.createElement('div');
+
       overlay.style.position = 'fixed';
       overlay.style.top = '0';
       overlay.style.left = '0';
@@ -137,61 +189,56 @@ function showCategory(category) {
       overlay.style.alignItems = 'center';
       overlay.style.justifyContent = 'center';
       overlay.style.zIndex = '10000';
+
       const clone = img.cloneNode();
+
       clone.style.maxWidth = '90%';
       clone.style.maxHeight = '90%';
       clone.style.borderRadius = '12px';
+
       overlay.appendChild(clone);
+
       overlay.addEventListener('click', () => overlay.remove());
+
       document.body.appendChild(overlay);
+
     });
+
   });
+
 }
+
 
 // Confetti effect
 function createConfetti() {
-  for(let i=0;i<50;i++){
+
+  for(let i = 0; i < 50; i++){
+
     const confetti = document.createElement('div');
+
     confetti.classList.add('confetti');
-    confetti.style.left = Math.random()*window.innerWidth+'px';
-    confetti.style.backgroundColor = ['#FFC0CB','#FFD1DC','#FFB6C1'][Math.floor(Math.random()*3)];
-    confetti.style.animationDuration = (3+Math.random()*2)+'s';
+
+    confetti.style.left =
+      Math.random() * window.innerWidth + 'px';
+
+    confetti.style.backgroundColor =
+      ['#FFC0CB','#FFD1DC','#FFB6C1']
+      [Math.floor(Math.random() * 3)];
+
+    confetti.style.animationDuration =
+      (3 + Math.random() * 2) + 's';
+
     document.body.appendChild(confetti);
-    setTimeout(() => confetti.remove(),5000);
+
+    setTimeout(() => confetti.remove(), 5000);
+
   }
+
 }
+
 window.onload = createConfetti;
+
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
